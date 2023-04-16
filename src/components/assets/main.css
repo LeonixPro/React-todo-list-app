@@ -1,0 +1,19 @@
+* {
+    margin: 0;padding: 0;font-size: 16px;font-family: Arial, Tahoma, sans-serif;
+    color: #525252;box-sizing: border-box;
+}
+ul, li {
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+:root {
+    --white: #ffffff;
+    --gray: #ccc;
+    --black: #000000;
+    --main: #525252;
+    --add-button: #00bf16;
+    --add-button-hover: #39a300;
+    --transition: all .4s ease;
+}

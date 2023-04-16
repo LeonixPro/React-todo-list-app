@@ -1,0 +1,152 @@
+@import url(../assets/main.css);
+.wrapper h4 {
+    font-size: 1.2rem;color: var(--white);margin-bottom: 10px;
+}
+.topInfo {
+    color: var(--white);
+}
+.top {
+    padding: 30px 40px;margin-bottom: 20px;
+    background: rgb(141,105,249);
+    background: -moz-linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+    background: linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8d69f9",endColorstr="#593bb3",GradientType=1);
+}
+.activeTask {
+    display: grid;grid-template-columns: 1fr 30%;height: 100vh;
+}
+.container {
+    display: flex;flex-wrap: wrap;padding: 20px 40px;
+}
+.task {
+    border: 1px solid var(--gray);width: 220px;height: 220px;margin: 0 30px 30px 0;
+    background: #faf5d4;padding: 20px;position: relative;transition: var(--transition);
+    z-index: 1;
+}
+.completedTask {
+    background: #e2ffea;
+}
+.task .title {
+    font-weight: bold;margin-bottom: 15px;
+}
+.task p {
+    line-height: 1.5;
+}
+.type {
+    position: absolute;bottom: 20px;left: 20px;font-size: .9rem;font-weight: bold;
+}
+.task:hover {
+    transform: scale(1.05);box-shadow: 0 0 15px var(--gray);cursor: pointer;
+}
+.pinned {
+    position: absolute;top: 0;right: 0;background: #8500c9;color: var(--white);
+    padding: 5px 10px;font-size: .7rem;
+}
+i.personal {
+    display: inline-block;width: 10px;height: 10px;border-radius: 50%;
+    background: #cd3f3f;margin-right: 8px;
+}
+i.work {
+    display: inline-block;width: 10px;height: 10px;border-radius: 50%;
+    background: #3f46cd;margin-right: 8px;
+}
+/* Active */
+.active {
+    position: absolute;background: var(--white);width: 100%;height: 100%;
+    top: 0;left: 0;z-index: 10;display: flex;flex-direction: column;
+    justify-content: center;
+}
+.active button {
+    display: block;width: 90%;margin: 0 auto;margin-bottom: 10px;
+    padding: 10px 0;font-weight: bold;cursor:pointer;border: none;
+}
+.active button:last-child {
+    margin-bottom: 0;
+}
+.active button.completed {
+    background: #04ad17;color: var(--white);
+}
+.active button.pinTask {
+    background: #085ef2;color: var(--white);
+}
+.active button.delete {
+    background: #db1818;color: var(--white);
+}
+.active button.cancel {
+    background: #2f5490;color: var(--white);
+}
+button.newTask {
+    position: fixed;bottom: 20px;right: 20px;background: var(--add-button);color: var(--white);
+    font-weight: bold;border: none;cursor: pointer;width: 55px;height: 55px;
+    display: flex;align-items: center;justify-content: center;border-radius: 50%;
+    transition: var(--transition);
+}
+button.newTask i {
+    color: var(--white);font-size: 1.5rem;
+}
+button.newTask span {
+    display: none;
+}
+button.newTask:hover span {
+    display: inline;color: var(--white);margin-left: 10px;
+}
+button.newTask:hover  {
+    width: fit-content;border-radius: 0;padding: 0 15px;background: var(--add-button-hover);
+}
+
+@media only screen and (max-width: 580px) and (min-width: 280px) {
+    .mainWrapper {
+        padding: 0;
+    }
+    .activeTask, .container {
+        display: block;
+    }
+    .container {
+        padding: 0;
+    }
+    .noTask {
+        text-align: center;
+    }
+    .top {
+        padding: 20px 0;text-align: center;margin-bottom: 20px;
+        background: rgb(141,105,249);
+        background: -moz-linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+        background: linear-gradient(180deg, rgba(141,105,249,1) 0%, rgba(89,59,179,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8d69f9",endColorstr="#593bb3",GradientType=1);
+    }
+    .top h4, .top .topInfo {
+        color: var(--white);
+    }
+    .top .topInfo {
+        margin: 0;
+    }
+    .task {
+        width: 95%;height: auto;margin: 0 auto 10px auto;border-left: 4px solid #085ef2;
+        background: var(--white);
+    }
+    .completedTask {
+        background: #e2ffea;border-left: 4px solid #00aa28;
+    }
+    .task .title {
+        margin: 0;
+    }
+    .task p, .task .type {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 880px) and (min-width: 581px) {
+    .activeTask {
+        display: block;
+    }
+}
+@media only screen and (max-width: 1200px) and (min-width: 901px) {
+    .activeTask {
+        display: grid;grid-template-columns: 1fr 40%;height: 100vh;
+    }
+    .task {
+        width: 220px;height: 220px;
+    }
+}
